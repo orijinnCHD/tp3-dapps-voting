@@ -51,9 +51,7 @@ const ProposalsList = () => {
     },[voting])
 
     const giveYourVote = async(idProposal)=>{
-        await voting.methods.setVote(idProposal).send({from:account}).then(async(receipt)=>{
-              
-        })
+        await voting.methods.setVote(idProposal).send({from:account})
     }
 
     return (

@@ -8,7 +8,7 @@ const VotersList = () => {
 
     let voters =[];
     const [voterData, setVoterData] = useState();
-
+    const [oldEvents,setOldEvents] = useState();
 
     useEffect(()=>{
         (async function () {
@@ -23,6 +23,18 @@ const VotersList = () => {
              .on('changed', changed => console.log(changed))
              .on('error', err => console.log(err))
              .on('connected', str => console.log(str))
+
+
+            let oldEvents= await voting.getPastEvents('VoterRegistered', {
+            fromBlock: 0,
+            toBlock: 'latest'
+            });
+            let oldies=[];
+            oldEvents.forEach(event => {
+                oldies.push(event.returnValues.voterAddress);
+            });
+            setOldEvents(oldies);
+            
          })();
          
     },[voting])
@@ -34,6 +46,7 @@ const VotersList = () => {
 
             <ul className="voters-list">
                 {voterData && voterData.map((addr,index) =><li key={index}>{(index + 1) + " : " + addr}</li> )}
+                {/* {oldEvents && oldEvents.map((addr,index) =><li key={index}>{(index + 1) + " : " + addr}</li> )}  */}
             </ul>
         </div>
     );

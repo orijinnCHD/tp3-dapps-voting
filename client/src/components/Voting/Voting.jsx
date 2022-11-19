@@ -13,13 +13,30 @@ import ResultVoting from './ResultVoting';
 
 const Voting = ({handleDisconnect}) => {
 
+    const voting = useSelector((state)=> state.providers.contract);
+
     const account = useSelector((state)=> state.providers.account);
     const owner = useSelector((state)=>state.providers.owner);
-    const connected = useSelector((state)=> state.providers.connected);
     const workflowStatus = useSelector((state)=>state.workflows.workflow);
 
-    const [isVisitor, setVisitor] = useState(false);
-   
+    const [isVisitor,setIsVisitor] = useState(false);
+
+    const checkVoter = async()=>{
+        const voter = await voting.methods.getVoter(account).call({from:account});
+        console.log("voter : " + voter);
+    }
+
+
+    /// verifier  le visiteur
+//    useEffect(()=>{
+//         try{
+//             checkVoter();
+//         }
+//         catch(err){
+//             console.log(err);
+//         }
+        
+//    },[workflowStatus,account])
 
     return (
         <div className="voting-container">
