@@ -53,12 +53,6 @@ const Monitoring = () => {
         });
     }
 
-    const tallyVotes = async()=>{
-        await voting.methods.tallyVotes().send({from:account}).then(function(receipt){
-            updateWorkflowStatus();// receipt can also be a new contract instance, when coming from a "contract.deploy({...}).send()"
-        });
-    }
-
     const reset = async()=>{
         await voting.methods.reset().send({from:account}).then(function(receipt){
             updateWorkflowStatus();// receipt can also be a new contract instance, when coming from a "contract.deploy({...}).send()"
@@ -80,7 +74,6 @@ const Monitoring = () => {
                     <li ><button id="workflow-btn" onClick={endProposalsRegistering}>end Proposals </button></li>
                     <li ><button id="workflow-btn" onClick={startVotingSession}>start Voting </button></li>
                     <li ><button id="workflow-btn" onClick={endVotingSession}>end Voting </button></li>
-                    <li ><button id="workflow-btn" onClick={tallyVotes}>tally Votes</button></li>
                 </ul>
                 <h3>Reset le vote </h3>
                 <button onClick={reset}>Reset </button>

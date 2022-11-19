@@ -1,0 +1,22 @@
+.voters-container{
+    
+    background-image: repeating-linear-gradient(135deg, rgba(189,189,189,0.1) 0px, rgba(189,189,189,0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+    box-shadow: 1px 2px 3px 1px #31313169;
+    width:30%;
+    h2{
+        padding-bottom: 20px;
+    }
+    ul{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+        li{
+            border-bottom: medium dashed green;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    }
+    
+}
