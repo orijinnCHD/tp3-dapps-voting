@@ -8,7 +8,9 @@ export const providersSlice = createSlice({
         sign:null,
         chain:null,
         owner:null,
-        connected:null
+        connected:null,
+        web3:null,
+
 
     },
     reducers:{
@@ -35,10 +37,14 @@ export const providersSlice = createSlice({
         },
         setConnected:(state,action)=>{
             state.connected = action.payload;
-        }
+        },
+        setWeb3:(state,action)=>{
+            state.web3 = action.payload;
+        },
+        
         
     }
 });
 
-export const {setContract,setAccount,setChain,setSign,setOwner,setConnected} = providersSlice.actions;
+export const {setContract,setAccount,setChain,setSign,setOwner,setConnected,setWeb3} = providersSlice.actions;
 export default providersSlice.reducer;

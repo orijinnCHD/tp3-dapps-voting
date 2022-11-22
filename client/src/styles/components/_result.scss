@@ -1,0 +1,13 @@
+.result-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .winner{
+        padding-top:30px;
+        color:green;
+        font-size: 1.2rem;
+    }
+
+}

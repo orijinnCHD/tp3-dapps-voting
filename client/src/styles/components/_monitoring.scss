@@ -11,6 +11,7 @@
     .monitoring-content{
 
         display:flex;
+        
         flex-direction: column;
         justify-content: space-between;
         h3{
@@ -40,7 +41,6 @@
         flex-direction:column;
         justify-content: center;
         align-items: center;
-
         border-width:3px;
         border-style:double;
         border-color:black;
@@ -48,6 +48,7 @@
         #workflow-list{
             display:flex;
             justify-content: space-around;
+            flex-wrap: wrap;
             gap:20px;
             padding:10px;
             button{

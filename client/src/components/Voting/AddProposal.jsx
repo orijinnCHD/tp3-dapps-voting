@@ -14,7 +14,6 @@ const AddProposal = () => {
 
         <div className="addProposal-container">
             <h2>Ajouter une proposition</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, architecto.</p>
             <form>
                 <textarea
                     type="text"

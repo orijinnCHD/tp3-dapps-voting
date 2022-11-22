@@ -12,15 +12,13 @@ const ResultVoting = () => {
     let winnerObject ={id:0,description:"nothing"};
     const getWinner =async()=>{
         
-        console.log('aaaa');
         const getId =  await voting.methods.winningProposalID().call({from:account}).then(async(id)=>{
             setIdWinner(id);
             winnerObject.id = id;
-            console.log('bbbs' + id);
+
             const getDescription = await voting.methods.getOneProposal(id).call({from:account}).then(async(proposal)=>{
                 winnerObject.description = proposal.description;
                 setDescWinner(proposal.description);
-                console.log('ccccc' + proposal.description);
             })
         });
     }
@@ -32,13 +30,14 @@ const ResultVoting = () => {
     },[workflowStatus])
 
     return (
-        <div>
+        <div className="result-container">
             <h2>Resultat</h2>
-            <div className="winner-contrainer">
+            <div className="winner">
                 <p>la proposition {idWinner}</p>
                 <p>{DescWinner}</p>
             </div>
         </div>
+        
     );
 };
 

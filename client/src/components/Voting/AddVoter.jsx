@@ -15,7 +15,7 @@ const AddVoter = () => {
 
         <div className="addVoter-container">
             <h2>Ajouter un voter</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, architecto.</p>
+            <p>Enregistrer les adresses qui souhaitent participer à la session de vote</p>
             <form>
                 <input
                     type="text"

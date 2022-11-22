@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import Voting from './Voting';
 
-const Home = ({handleConnectWallet}) => {
+const Home = (props) => {
 
     return (
     
@@ -13,7 +13,8 @@ const Home = ({handleConnectWallet}) => {
             </div>  
             <div className="home-right">
                 <p> Dicta optio non enim facere. Suscipit omnis explicabo iure quidem, id neque?</p>
-                <button onClick={()=>(handleConnectWallet())}>Connection</button>
+                <button onClick={()=>(props.handleConnectWallet())}>Connection</button>
+                {/* <button onClick={()=>(props.handleDisconnect())}>Deconnection</button> */}
             </div>
         </div>
     );

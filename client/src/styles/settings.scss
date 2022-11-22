@@ -21,9 +21,16 @@ button{
     //margin-top: 10px;
     border-radius: 5px;
     font-size: 17px;
-    pointer-events: auto!important;
+    //pointer-events: auto!important;
+    cursor:pointer;
     max-width : 130px;
+    transition:0.1s ease-in-out;
 }
 button:active {
-    transform: scale(0.95);
+    background: black;
+    transition:0.1s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
 }

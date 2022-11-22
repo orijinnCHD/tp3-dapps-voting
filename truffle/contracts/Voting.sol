@@ -3,6 +3,11 @@
 pragma solidity 0.8.17;
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
+/**
+*@dev implementation voting ssystem 
+
+*
+ */
 
 contract Voting is Ownable {
 
@@ -39,42 +44,49 @@ contract Voting is Ownable {
     event ProposalRegistered(uint proposalId);
     event Voted (address voter, uint proposalId);
     
+
+    /**
+    *@dev limit access on fonction only voter
+
+    * verify address on this person who is registered in mapping voters
+    *
+     */
     modifier onlyVoters() {
         require(voters[msg.sender].isRegistered, "You're not a voter");
         _;
     }
-    
 
-/////////////////////////////reset (à retirer)
-
-function reset()external{
-
-    for(uint i = 0 ;  i < addressVoters.length; i++){
-        voters[addressVoters[i]] = Voter(false , false , 0);
-    }
-
-    delete addressVoters;
-    delete proposalsArray;
-    winningProposalID = 0;
-
-    emit WorkflowStatusChange( workflowStatus , WorkflowStatus.RegisteringVoters );
-    workflowStatus = WorkflowStatus.RegisteringVoters;
-
-}
 
 
     // on peut faire un modifier pour les états
 
     // ::::::::::::: GETTERS ::::::::::::: //
 
+
+    /**
+    *@dev Set the value {_addr} and return a voter
+
+    * this function is access if person is a voter 
+    *
+     */
     function getVoter(address _addr) external onlyVoters view returns (Voter memory) {
         return voters[_addr];
     }
     
-    function getOneProposal(uint _id) external onlyVoters view returns (Proposal memory) {
+    /**
+    *@dev Set the value {_id} and return a voter
+
+    * this function is access if person is a voter 
+    *
+     */
+    function getOneProposal(uint256 _id) external onlyVoters view returns (Proposal memory) {
         return proposalsArray[_id];
     }
 
+
+    function getProposals() external onlyVoters view returns (Proposal[] memory) {
+        return proposalsArray;
+    }
  
     // ::::::::::::: REGISTRATION ::::::::::::: // 
 
