@@ -1,5 +1,4 @@
 import React from 'react';
-import Login from './Login';
 import { useEffect, useState } from 'react';
 import Web3 from "web3";
 import Web3Provider from './Web3Provider';

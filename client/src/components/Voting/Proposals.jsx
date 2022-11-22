@@ -5,7 +5,7 @@ const Proposals = (props) => {
 
     const voting = useSelector((state)=> state.providers.contract);
     const account = useSelector((state)=> state.providers.account);
-    const workflowStatus = useSelector((state)=>state.workflows.workflow);
+    //const workflowStatus = useSelector((state)=>state.workflows.workflow);
 
     const [proposalsData,setProposalsData] =useState();
     const [idVoted,setIdVoted] = useState(-1);

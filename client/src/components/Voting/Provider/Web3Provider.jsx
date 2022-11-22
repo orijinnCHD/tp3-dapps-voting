@@ -2,8 +2,7 @@ import Web3 from "web3";
 import React, { useEffect, useState } from 'react';
 import myContract from '../../../contracts/Voting.json';
 import { useDispatch, useSelector } from "react-redux";
-import {setAccount, setContract, setOwner, setChain,setConnected,setWeb3,setProvider } from '../../../features/providers.slice';
-import {isAccountRegistered } from '../../../features/voters.slice';
+import {setAccount, setContract, setOwner, setChain} from '../../../features/providers.slice';
 
 
 const Web3Provider = (props) => {

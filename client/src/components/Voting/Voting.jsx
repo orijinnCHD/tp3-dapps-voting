@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {  useSelector } from "react-redux";
 import AddProposal from './AddProposal';
 import AddVoter from './AddVoter';
-import EndSession from './Waiting';
 import Monitoring from './Monitoring';
 import SetVote from './SetVote';
 import VotersList from './VotersList';
@@ -10,21 +9,17 @@ import Waiting from './Waiting';
 import ResultVoting from './ResultVoting';
 import { useDispatch } from "react-redux";
 import {setAccount, setChain,setConnected } from '../../features/providers.slice';
-import Proposals from '../Proposals';
+import Proposals from './Proposals';
 
 
 
 const Voting = () => {
 
-    //const voting = useSelector((state)=> state.providers.contract);
     const account = useSelector((state)=> state.providers.account);
-    //const owner = useSelector((state)=>state.providers.owner);
     const workflowStatus = useSelector((state)=>state.workflows.workflow);
-    
     const dispatch = useDispatch();
 
     const [accountRegister,setAccountRegister] = useState(false);
-    const [isOneProposal,setIsOneProposal] = useState(false);
 
 
     const onLogout = ()=>{
