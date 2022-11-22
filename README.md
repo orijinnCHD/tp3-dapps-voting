@@ -1,41 +1,65 @@
-# React Truffle Box
+# TP3 Alyra - création d'une Dapp de vote
 
-This box comes with everything you need to start using Truffle to write, compile, test, and deploy smart contracts, and interact with them from a React app.
+ce projet propose la création d'une Dapps d'un systéme de vote créer par smart contract 
+
 
 ## Installation
 
-First ensure you are in an empty directory.
+Clone the project
 
-Run the `unbox` command using 1 of 2 ways.
-
-```sh
-# Install Truffle globally and run `truffle unbox`
-$ npm install -g truffle
-$ truffle unbox react
+```bash
+  git clone https://github.com/orijinnCHD/tp3-dapps-voting.git
 ```
 
-```sh
-# Alternatively, run `truffle unbox` via npx
-$ npx truffle unbox react
+Installer les dépendances
+
+```bash
+  npm install
+```
+## deployement sur localhost
+
+Premiérement, Lancer votre ganache blockchain à la racine du dossier
+
+```bash
+  ganache
 ```
 
-Start the react dev server.
+Placez vous dans le dossier "truffle" (cd truffle), puis  lancer cette commande :
 
-```sh
-$ cd client
-$ npm start
-  Starting the development server...
+```bash
+  truffle migrate --reset
 ```
 
-From there, follow the instructions on the hosted React app. It will walk you through using Truffle and Ganache to deploy the `SimpleStorage` contract, making calls to it, and sending transactions to change the contract's state.
+Pour visualiez l'application, placez-vous dans le dossier client, (cd client à la racine), puis executer la commande :
 
-## FAQ
+```bash
+  npm run start 
+```
 
-- __How do I use this with Ganache (or any other network)?__
+## deployement sur testnet goerli
 
-  The Truffle project is set to deploy to Ganache by default. If you'd like to change this, it's as easy as modifying the Truffle config file! Check out [our documentation on adding network configurations](https://trufflesuite.com/docs/truffle/reference/configuration/#networks). From there, you can run `truffle migrate` pointed to another network, restart the React dev server, and see the change take place.
+renseignez votre fichier .env les variables : 
+```bash
+INFURA_PROJECT_ID  et MNEMONIC
+```
 
-- __Where can I find more resources?__
+## Video d'utilisation de la Dapp Voting
 
-  This Box is a sweet combo of [Truffle](https://trufflesuite.com) and [Create React App](https://create-react-app.dev). Either one would be a great place to start!
-# tp3-dapps-voting
+voici une video de demonstration de l'application qui retranscrit une session de vote :
+
+https://www.loom.com/share/66438859297a4ded9a738bde65731189
+
+
+
+
+## environnement de travail
+
+- Environnement : truffle unbox react, linux(wsl)
+- Langage : solidity ,JS
+- front: ReactJS, redux, reduxTools/kit
+- CSS : SASS
+- editeur : VS code
+- Network: Ganache, Goerli
+- Wallet : Metamask
+
+Merci à l'ecole Alyra !!
